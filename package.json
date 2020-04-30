@@ -10,7 +10,9 @@
     "build": "node build/build.js",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "test": "testcafe safari tests/test.js --app-init-delay 10000 -S -s screenshots",
-    "lint": "eslint --ext .js,.vue src test/unit/specs"
+    "lint": "eslint --ext .js,.vue src test/unit/specs",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
     "babel-preset-stage-0": "^6.24.1",
@@ -25,7 +27,8 @@
     "vue-timepicker": "^0.0.3",
     "vuex": "^2.4.0",
     "vuex-persistedstate": "^2.0.0",
-    "yarn": "^1.0.2"
+    "yarn": "^1.0.2",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
@@ -111,5 +114,6 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "snyk": true
 }
